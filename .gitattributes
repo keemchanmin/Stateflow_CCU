@@ -1,2 +1,2 @@
 * linguist-vendored
-*.MATLAB linguist-vendored=false
+*.c linguist-vendored=false
