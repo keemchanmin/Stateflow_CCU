@@ -1,0 +1,1317 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><link rel="stylesheet" type="text/css" href="rtwreport.css" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script language="JavaScript" type="text/javascript" src="rtwshrink.js"></script><title>
+Static Code Metrics Report
+</title>
+
+</head>
+<body onload="try {if (top) {if (top.rtwPageOnLoad) top.rtwPageOnLoad('rtwIdCodeMetrics'); else local_onload();}} catch(err) {};">
+<h1>
+Static Code Metrics Report
+</h1>
+<div>
+<script>function postParentWindowMessage(message) {window.parent.postMessage(message, "*");}</script><p>
+정적 코드 메트릭 리포트는 생성 코드의 통계량을 제공합니다. 메트릭은 <b>구성 파라미터 > 하드웨어 구현</b> 창의 '장치 세부 정보' 섹션에 지정된 C 데이터형을 사용하여, 생성 코드의 정적 분석을 토대로 추정됩니다: <b>char</b> 8, <b>short</b> 16, <b>int</b> 32, <b>long</b> 32, <b>float</b> 32, <b>double</b> 64, <b>pointer</b> 32 bits. 모델이 Variant 블록을 포함하는 경우 정적 코드 메트릭 리포트에는 비활성 Variant에 대한 데이터가 포함되지 않습니다. 실제 오브젝트 코드 메트릭은 타깃별 컴파일러 및 플랫폼 설정에 따라 다를 수 있습니다. 코드 효율성을 향상시키기 위한 옵션은 <b>코드 생성 어드바이저</b><a name="MATLAB_link" style="text-decoration: none" href="javascript: void(0)" onclick="postParentWindowMessage({message:'legacyMCall', expr:'helpview(\'ecoder\', \'code_gen_advisor\')'})">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADhElEQVQ4T2WTe0yTBxTFz/fRIn2AqS1LC4gplIcFYYkTxjTpiMQRJo50KhYmexkkIWwsTMtIFCWMAZuFoc7nXNiWbLhibdMtA4oL7hFskI7KoxOGLbRCulEeK5Ty9WsXMRDn7p8355zc3PwOgaenuI8pkW7MO7RtY9GuaJbEF4DfMO62tA+4WieVSbqn5cSTi6jGUdnp3YK6otSwDEYQSbioAB4JeEwCbq8vcM00a6i/7aqaUib2rfnWA5LPjR/WFkRejOEFsz8d9UE37oGXpkHSfoTSfsjj2XhbyoZpyuPKuzzy+sSp7fpHIasBz9SNZPSWxHSFhQZzXjYsYnZuGY3Pc5AVtQEEAvjJ6oGy8y9s3hSCm/lCmBxLrqzSK5mLunIzgVMBsiV71lCWzsuUdbhx1+rG4CE+ojlBqNRPgiQInM6JhGOeQkLjKOTPhaPtoBAV6kG96npNHiFssGSOlscZ9HaKVKj/xr4YEtr9IpzpcuB9zTSw4kfbUTEO7hBgZ/09/Gal0XMsHtGbyBXpca2MeK3dfukreWSxXDcDjdmNcCYFRSwTavM8Hs74IYsNwY2jEix5KGw/2Q/nAgOlOSKcK4hGuqqvgWi+47pVtoOXmXbJjrt2D+CngYVlgKKRFcdCe2k8Vrw0Xm0w4baNApgbkJMchu+PJaLgG4uGqP3F2VG1M3zPC83j6P1zEQjCqpnj88JckwIBJwh7ThpxZ8IH8EMBD41XUrm4WSHFgdYhNfFSq/XDH4u2VB1pteFzgxPgkAAVQDjLj5GPnsXX3ZMov/YAEPEAkgRcS6iWR6A6X4yEyh9OENwTvyfdq9hqnHZ62Rm1w0Aw4/EVHi8U29iw2BdhmiEAbsjqQ9nLbgydSYdjhZ7bVViXvcpBic5x5UJuxBHltzY0ahwAi4FYAQMDtakwjs1jd/0wAkwmMLOAprckKM8TI/fjzi/1LVdLHpN4vD/iuzfjevYnciXV1634RGeHj6Jw/g0xzA8WcFYzAb6AhWpFDMr2idHSM2F5t7KpEL3N/esoc9/pSP6sUNp2OC1KOjblQdvPDzF43wWCCCBtKx/5skiI+CFQ3bIOKeu+eM/XXdO1jvJaMdjF7aLsFOEHZXtTFC9u4QrW9jSArvvz003qX7Wd2u4LMKoG/lem/9Q0V5WUtJknSxCyRQE/yOGpf5x/jNmMsM31Y+ys90ntv6Qkblq/pPiXAAAAAElFTkSuQmCC" title="코드 생성 어드바이저 도움말 열기" style="border:none;cursor:pointer;max-width:100%;" alt="help.png">
+
+</img>
+
+</a>
+를 참조하십시오.
+</p>
+
+</div>
+<div id="table_of_contents">
+<h3>
+목차
+</h3>
+<ol>
+<li>
+<a href="#sec_file_info" onclick="rtwTableExpand(window.document, window.document.getElementById('rtwIdCodeMetrics_table_001_control'), 'rtwIdCodeMetrics_table_001')">
+파일 정보
+</a>
+
+</li>
+<li>
+<a href="#sec_globalvar_info" onclick="rtwTableExpand(window.document, window.document.getElementById('rtwIdCodeMetrics_table_002_control'), 'rtwIdCodeMetrics_table_002')">
+전역 변수
+</a>
+
+</li>
+<li>
+<a href="#sec_localstatic_info" onclick="rtwTableExpand(window.document, window.document.getElementById('rtwIdCodeMetrics_table_003_control'), 'rtwIdCodeMetrics_table_003')">
+지역 정적 변수
+</a>
+
+</li>
+<li>
+<a href="#sec_fcn_info" onclick="rtwTableExpand(window.document, window.document.getElementById('rtwIdCodeMetrics_table_008_control'), 'rtwIdCodeMetrics_table_008')">
+함수 정보
+</a>
+
+</li>
+
+</ol>
+
+</div>
+<h3 name="sec_파일_정보" id="sec_file_info">
+1. 파일 정보 <span title="Click to shrink or expand section" style="cursor:pointer;font-weight:normal;" id="rtwIdCodeMetrics_table_001_control" onclick ="if (rtwTableShrink) rtwTableShrink(window.document, this, 'rtwIdCodeMetrics_table_001', false)"><span class="shrink-button">[<u>hide</u>]</span></span>
+</h3>
+<table width="100%" name="rtwIdCodeMetrics_table_001" id="rtwIdCodeMetrics_table_001" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" border="0">
+<tr>
+<td align="left" valign="top">
+<p>
+<span name="button_fileInfo_summary_table" id="button_fileInfo_summary_table" title="클릭하여 트리 축소 또는 확장" style="cursor:pointer;font-family:monospace;font-weight:normal;" onclick ="if (rtwTableShrink) rtwTableShrink(window.document, this, 'fileInfo_summary_table', true)"><span class="shrink-button">[-]</span></span> 요약 (제외 ert_main.c)
+</p>
+<table width="50%" cellpadding="0" name="fileInfo_summary_table" id="fileInfo_summary_table" border="0">
+<tr>
+<td width="4%" align="left" valign="top">
+<span style="white-space:nowrap" title="ert_main.c를 제외한 소스 파일의 개수입니다.">.c 파일 개수</span>
+</td>
+<td width="4%" align="left" valign="top">
+:
+</td>
+<td width="4%" align="right" valign="top">
+2
+</td>
+<td width="86%" align="right" valign="top">
+&#160;
+</td>
+
+</tr>
+<tr>
+<td width="4%" align="left" valign="top">
+<span style="white-space:nowrap" title="헤더 파일 개수">.h 파일 개수</span>
+</td>
+<td width="4%" align="left" valign="top">
+:
+</td>
+<td width="4%" align="right" valign="top">
+4
+</td>
+<td width="86%" align="right" valign="top">
+&#160;
+</td>
+
+</tr>
+<tr>
+<td width="4%" align="left" valign="top">
+<span title="주석과 빈 라인을 제외한 코드 라인 수">코드 라인 수</span>
+</td>
+<td width="4%" align="left" valign="top">
+:
+</td>
+<td width="4%" align="right" valign="top">
+328
+</td>
+<td width="86%" align="right" valign="top">
+&#160;
+</td>
+
+</tr>
+<tr>
+<td width="4%" align="left" valign="top">
+<span style="white-space:nowrap" title="소스 코드, 주석, 빈 라인을 포함한 라인 수입니다.">라인 수</span>
+</td>
+<td width="4%" align="left" valign="top">
+:
+</td>
+<td width="4%" align="right" valign="top">
+611
+</td>
+<td width="86%" align="right" valign="top">
+&#160;
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<p>
+<span name="button_fileInfo_detail_table" id="button_fileInfo_detail_table" title="클릭하여 트리 축소 또는 확장" style="cursor:pointer;font-family:monospace;font-weight:normal;" onclick ="if (rtwTableShrink) rtwTableShrink(window.document, this, 'fileInfo_detail_table', true)"><span class="shrink-button">[-]</span></span> 파일 세부 정보
+</p>
+<table width="100%" cellpadding="2" name="fileInfo_detail_table" id="fileInfo_detail_table" border="1">
+<tr style="background-color: #eeeeff">
+<td width="33%" align="left" valign="top" style="border-style: none">
+<b>
+<span style="white-space:nowrap" title="코드 라인 수에 따라 내림차순으로 정렬된 파일입니다.">파일 이름</span>
+</b>
+
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+<b>
+<span title="주석과 빈 라인을 제외한 코드 라인 수입니다.">코드 라인 수</span>
+</b>
+
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+<b>
+<span style="white-space:nowrap" title="소스 코드, 주석, 빈 라인을 포함한 라인 수입니다.">라인 수</span>
+</b>
+
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+<b>
+<span style="white-space:nowrap" title="파일의 타임 스탬프">생성된 날짜</span>
+</b>
+
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td width="33%" align="left" valign="top" style="border-style: none">
+<a href="javascript: void(0)" class="code2code" onclick="postParentWindowMessage({message:'jumpToCode',location:'Vehicle_State_Controller.c'})">
+Vehicle_State_Controller.c
+</a>
+
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+164
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+211
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+02/28/2025 12:13 PM
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td width="33%" align="left" valign="top" style="border-style: none">
+<a href="javascript: void(0)" class="code2code" onclick="postParentWindowMessage({message:'jumpToCode',location:'Vehicle_State0.h'})">
+Vehicle_State0.h
+</a>
+
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+55
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+125
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+02/28/2025 12:13 PM
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td width="33%" align="left" valign="top" style="border-style: none">
+<a href="javascript: void(0)" class="code2code" onclick="postParentWindowMessage({message:'jumpToCode',location:'Vehicle_State0_types.h'})">
+Vehicle_State0_types.h
+</a>
+
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+54
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+98
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+02/28/2025 12:13 PM
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td width="33%" align="left" valign="top" style="border-style: none">
+<a href="javascript: void(0)" class="code2code" onclick="postParentWindowMessage({message:'jumpToCode',location:'Vehicle_State_Controller.h'})">
+Vehicle_State_Controller.h
+</a>
+
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+28
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+60
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+02/28/2025 12:13 PM
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td width="33%" align="left" valign="top" style="border-style: none">
+<a href="javascript: void(0)" class="code2code" onclick="postParentWindowMessage({message:'jumpToCode',location:'Vehicle_State0.c'})">
+Vehicle_State0.c
+</a>
+
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+21
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+84
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+02/28/2025 12:13 PM
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td width="33%" align="left" valign="top" style="border-style: none">
+<a href="javascript: void(0)" class="code2code" onclick="postParentWindowMessage({message:'jumpToCode',location:'Vehicle_State0_private.h'})">
+Vehicle_State0_private.h
+</a>
+
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+6
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+33
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+02/28/2025 12:13 PM
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+<h3 name="sec_전역_변수" id="sec_globalvar_info">
+2. 전역 변수 <span title="Click to shrink or expand section" style="cursor:pointer;font-weight:normal;" id="rtwIdCodeMetrics_table_002_control" onclick ="if (rtwTableShrink) rtwTableShrink(window.document, this, 'rtwIdCodeMetrics_table_002', false)"><span class="shrink-button">[<u>hide</u>]</span></span>
+</h3>
+<table width="100%" name="rtwIdCodeMetrics_table_002" id="rtwIdCodeMetrics_table_002" border="0">
+<tr>
+<td align="left" valign="top">
+생성 코드에 정의된 전역 변수입니다.
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="0" cellspacing="0" name="globalvarInfo_table" id="globalvarInfo_table" border="1">
+<tr style="background-color: #ffffff">
+<td width="100%" align="left" valign="top" style="border-style: none">
+<table class="treeTable" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2" border="0">
+<tr style="background-color: #eeeeff">
+<td width="33%" align="left" valign="top" style="border-style: none">
+<b>
+<span title="최대 크기(단위: 바이트)로 정렬된 전역 변수입니다.">전역 변수</span>
+</b>
+
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+<b>
+<span title="전역 변수 크기(단위: 바이트)입니다.">크기(바이트)</span>
+</b>
+
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+<b>
+<span title="이 전역 변수에 대한 잠재적 읽기 및 쓰기의 총 개수">읽기/쓰기</span>
+</b>
+
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+<b>
+<span title="함수의 최대 잠재적 읽기 및 쓰기 개수">함수의 읽기/쓰기</span>
+</b>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2" border="0">
+<tr style="background-color: #ffffff">
+<td width="33%" align="left" valign="top" style="border-style: none">
+<span style="white-space:nowrap"><span name="button_globalvarInfo_table_sub3" id="button_globalvarInfo_table_sub3" title="Click to shrink or expand tree" style="cursor:pointer;font-family:monospace;font-weight:normal;" onclick ="if (rtwTableShrink) rtwTableShrink(window.document, this, 'globalvarInfo_table_sub3', true)"><span class="shrink-button">[+]</span></span> <a href="javascript: void(0)" onclick="postParentWindowMessage({message:'jumpToCode',location:'rtU'})">
+rtU
+</a>
+</span>
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+28
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+10<span style="font-family:Courier">&#160;</span>
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+10<span style="font-family:Courier">&#160;</span>
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table style="display: none; border-style: none" width="100%" cellpadding="0" cellspacing="0" name="globalvarInfo_table_sub3" id="globalvarInfo_table_sub3" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #eeeeff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; isStart</span></td>
+<td align="right" width="22.22%">1</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #ffffff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; isArrived</span></td>
+<td align="right" width="22.22%">1</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #eeeeff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; operation</span></td>
+<td align="right" width="22.22%">4</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #ffffff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; left_speed</span></td>
+<td align="right" width="22.22%">2</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #eeeeff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; right_speed</span></td>
+<td align="right" width="22.22%">2</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #ffffff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; r_distance</span></td>
+<td align="right" width="22.22%">4</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #eeeeff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; f_distance</span></td>
+<td align="right" width="22.22%">4</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #ffffff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; operationDoorState</span></td>
+<td align="right" width="22.22%">4</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #eeeeff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; isOpenComplete</span></td>
+<td align="right" width="22.22%">1</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #ffffff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; isCloseComplete</span></td>
+<td align="right" width="22.22%">1</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2" border="0">
+<tr style="background-color: #eeeeff">
+<td width="33%" align="left" valign="top" style="border-style: none">
+<span style="white-space:nowrap"><span name="button_globalvarInfo_table_sub14" id="button_globalvarInfo_table_sub14" title="Click to shrink or expand tree" style="cursor:pointer;font-family:monospace;font-weight:normal;" onclick ="if (rtwTableShrink) rtwTableShrink(window.document, this, 'globalvarInfo_table_sub14', true)"><span class="shrink-button">[+]</span></span> <a href="javascript: void(0)" onclick="postParentWindowMessage({message:'jumpToCode',location:'rtY'})">
+rtY
+</a>
+</span>
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+20
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+10<span style="font-family:Courier">&#160;</span>
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+5<span style="font-family:Courier">&#160;</span>
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table style="display: none; border-style: none" width="100%" cellpadding="0" cellspacing="0" name="globalvarInfo_table_sub14" id="globalvarInfo_table_sub14" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #ffffff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; isEnd</span></td>
+<td align="right" width="22.22%">1</td>
+<td align="right" width="22.22%">2<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #eeeeff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; vehicle_state</span></td>
+<td align="right" width="22.22%">4</td>
+<td align="right" width="22.22%">2<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #ffffff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; gear_state</span></td>
+<td align="right" width="22.22%">4</td>
+<td align="right" width="22.22%">2<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #eeeeff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; obstacle_detected</span></td>
+<td align="right" width="22.22%">1</td>
+<td align="right" width="22.22%">2<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #ffffff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; door_state</span></td>
+<td align="right" width="22.22%">4</td>
+<td align="right" width="22.22%">2<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2" border="0">
+<tr style="background-color: #eeeeff">
+<td width="33%" align="left" valign="top" style="border-style: none">
+<span style="white-space:nowrap"><span name="button_globalvarInfo_table_sub20" id="button_globalvarInfo_table_sub20" title="Click to shrink or expand tree" style="cursor:pointer;font-family:monospace;font-weight:normal;" onclick ="if (rtwTableShrink) rtwTableShrink(window.document, this, 'globalvarInfo_table_sub20', true)"><span class="shrink-button">[+]</span></span> <a title="rtM_은(는) Vehicle_State0.c의 정적 전역 변수입니다." href="javascript: void(0)" onclick="postParentWindowMessage({message:'jumpToCode',location:'rtM_'})">
+rtM_
+</a>
+</span>
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+4
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+<span title="전역 변수가 어떤 함수에서도 직접 사용되지 않습니다.">0</span><span style="font-family:Courier">*</span>
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+<span title="전역 변수가 어떤 함수에서도 직접 사용되지 않습니다.">0</span><span style="font-family:Courier">*</span>
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table style="display: none; border-style: none" width="100%" cellpadding="0" cellspacing="0" name="globalvarInfo_table_sub20" id="globalvarInfo_table_sub20" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #ffffff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; errorStatus</span></td>
+<td align="right" width="22.22%">4</td>
+<td align="right" width="22.22%">0<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">0<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2" border="0">
+<tr style="background-color: #eeeeff">
+<td width="33%" align="left" valign="top" style="border-style: none">
+<span style="white-space:nowrap"><span name="button_globalvarInfo_table_sub22" id="button_globalvarInfo_table_sub22" title="Click to shrink or expand tree" style="cursor:pointer;font-family:monospace;font-weight:normal;" onclick ="if (rtwTableShrink) rtwTableShrink(window.document, this, 'globalvarInfo_table_sub22', true)"><span class="shrink-button">[+]</span></span> <a href="javascript: void(0)" onclick="postParentWindowMessage({message:'jumpToCode',location:'rtDW'})">
+rtDW
+</a>
+</span>
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+4
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+1<span style="font-family:Courier">&#160;</span>
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+1<span style="font-family:Courier">&#160;</span>
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table style="display: none; border-style: none" width="100%" cellpadding="0" cellspacing="0" name="globalvarInfo_table_sub22" id="globalvarInfo_table_sub22" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #ffffff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;<span name="button_globalvarInfo_table_sub22_sub22" id="button_globalvarInfo_table_sub22_sub22" title="Click to shrink or expand tree" style="cursor:pointer;font-family:monospace;font-weight:normal;" onclick ="if (rtwTableShrink) rtwTableShrink(window.document, this, 'globalvarInfo_table_sub22_sub22', true)"><span class="shrink-button">[+]</span></span> sf_Vehicle_State</span></td>
+<td align="right" width="22.22%">4</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table style="display: none; border-style: none" width="100%" cellpadding="0" cellspacing="0" name="globalvarInfo_table_sub22_sub22" id="globalvarInfo_table_sub22_sub22" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #eeeeff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; is_active_c2_Vehicle_State0</span></td>
+<td align="right" width="22.22%">1</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #ffffff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; is_c2_Vehicle_State0</span></td>
+<td align="right" width="22.22%">1</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #eeeeff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; is_GEAR</span></td>
+<td align="right" width="22.22%">1</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2"  style="background-color: #ffffff" >
+<tr><td align="left" width="33.33%"><span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160; is_DOOR</span></td>
+<td align="right" width="22.22%">1</td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+<td align="right" width="22.22%">1<span style="font-family:Courier">&#160;</span></td>
+</tr></table>
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2" border="0">
+<tr style="background-color: #eeeeff">
+<td width="33%" align="left" valign="top" style="border-style: none">
+<b>총계</b>
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+<b>56</b>
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+<b>21<span style="font-family:Courier">&#160;</span></b>
+</td>
+<td width="22%" align="right" valign="top" style="border-style: none">
+ 
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+* 전역 변수가 어떤 함수에서도 직접 사용되지 않습니다.
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+<h3 name="sec_지역_정적_변수" id="sec_localstatic_info">
+3. 지역 정적 변수 <span title="Click to shrink or expand section" style="cursor:pointer;font-weight:normal;" id="rtwIdCodeMetrics_table_003_control" onclick ="if (rtwTableShrink) rtwTableShrink(window.document, this, 'rtwIdCodeMetrics_table_003', false)"><span class="shrink-button">[<u>hide</u>]</span></span>
+</h3>
+<table width="100%" name="rtwIdCodeMetrics_table_003" id="rtwIdCodeMetrics_table_003" border="0">
+<tr>
+<td align="left" valign="top">
+<span> 지역 정적 변수는 함수 내에서 정의되며, 정의하는 함수 내에서 이러한 변수에 계속 액세스할 수 있습니다. 이러한 변수는 프로그램이 존속하는 동안 할당된 값을 유지합니다. 지역 정적 변수의 전체 크기는 <b> 0바이트</b>입니다. </span>
+</td>
+
+</tr>
+
+</table>
+<h3 name="sec_함수_정보" id="sec_fcn_info">
+4. 함수 정보 <span title="Click to shrink or expand section" style="cursor:pointer;font-weight:normal;" id="rtwIdCodeMetrics_table_008_control" onclick ="if (rtwTableShrink) rtwTableShrink(window.document, this, 'rtwIdCodeMetrics_table_008', false)"><span class="shrink-button">[<u>hide</u>]</span></span>
+</h3>
+<table width="100%" name="rtwIdCodeMetrics_table_008" id="rtwIdCodeMetrics_table_008" border="0">
+<tr>
+<td align="left" valign="top">
+호출 트리 형식 또는 테이블 형식으로 함수 메트릭을 봅니다. 자체 스택 수에는 정적이 아닌 지역 변수의 크기, 입력 파라미터, 함수의 반환 변수가 포함됩니다. 누적 스택 수에는 함수의 추정 스택 크기에 함수가 호출하는 서브루틴의 누적 스택 크기의 최댓값을 더한 값이 포함됩니다.
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="0" cellspacing="0" name="fcnInfo_calltree" id="fcnInfo_calltree" border="0">
+<tr>
+<td align="left" valign="top">
+보기:호출 트리 | <a href="javascript:if (rtwSwitchView) rtwSwitchView(window.document,'fcnInfo_calltree', 'fcnInfo_table')" title="사전순으로 된 함수 목록입니다. 두 번째 열은 함수의 호출자를 포함합니다.">
+테이블
+</a>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="0" cellspacing="0" border="1">
+<tr style="background-color: #ffffff">
+<td width="100%" align="left" valign="top" style="border-style: none">
+<table width="100%" cellpadding="0" cellspacing="0" class="treeTable" id="fcnTreeView" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2" border="0">
+<tr style="background-color: #eeeeff">
+<td width="37%" align="left" valign="top" style="border-style: none">
+<b>
+<span title="최대 누적 스택 크기로 정렬된 함수 이름입니다.">함수 이름</span>
+</b>
+
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+<b>
+<span title="함수의 추정 스택 크기와 해당 서브루틴의 누적 스택 크기의 최댓값을 더한 값입니다.">누적 스택 크기(바이트)</span>
+</b>
+
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+<b>
+<span title="함수의 지역 변수, 입력 파라미터, 반환 변수의 크기입니다.">자체 스택 크기(바이트)</span>
+</b>
+
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+<b>
+<span title="주석과 빈 라인을 제외한 코드 라인 수입니다.">코드 라인 수</span>
+</b>
+
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+<b>
+<span style="white-space:nowrap" title="소스 코드, 주석, 빈 라인을 포함한 라인 수입니다.">라인 수</span>
+</b>
+
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+<b>
+<span style="white-space:nowrap" title="순환 복잡도">실수/복소수 여부</span>
+</b>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table style="border-style: none" width="100%" cellpadding="0" cellspacing="0" name="" id="" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2" border="0">
+<tr style="background-color: #ffffff">
+<td width="37%" align="left" valign="top" style="border-style: none">
+<span style="white-space:nowrap"><span name="button_4" id="button_4" title="클릭하여 트리 축소 또는 확장" style="cursor:pointer;font-family:monospace;font-weight:normal;" onclick ="if (rtwTableShrink) rtwTableShrink(window.document, this, '4', true)"><span class="shrink-button">[+]</span></span>&#160;<b><a href="javascript: void(0)" onclick="postParentWindowMessage({message:'jumpToCode',location:'Vehicle_State0_step'})">
+Vehicle_State0_step
+</a>
+</b></span>
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+48
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+0
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+6
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+26
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table style="display: none; border-style: none" width="100%" cellpadding="0" cellspacing="0" name="4" id="4" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2" border="0">
+<tr style="background-color: #eeeeff">
+<td width="37%" align="left" valign="top" style="border-style: none">
+<span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160;&#160;<a href="javascript: void(0)" onclick="postParentWindowMessage({message:'jumpToCode',location:'State_Control'})">
+State_Control
+</a>
+</span>
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+48
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+48
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+129
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+153
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+22
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table style="border-style: none" width="100%" cellpadding="0" cellspacing="0" name="" id="" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2" border="0">
+<tr style="background-color: #ffffff">
+<td width="37%" align="left" valign="top" style="border-style: none">
+<span style="white-space:nowrap"><span name="button_6" id="button_6" title="클릭하여 트리 축소 또는 확장" style="cursor:pointer;font-family:monospace;font-weight:normal;" onclick ="if (rtwTableShrink) rtwTableShrink(window.document, this, '6', true)"><span class="shrink-button">[+]</span></span>&#160;<b><a href="javascript: void(0)" onclick="postParentWindowMessage({message:'jumpToCode',location:'Vehicle_State0_initialize'})">
+Vehicle_State0_initialize
+</a>
+</b></span>
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+20
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+0
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+2
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+12
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table style="display: none; border-style: none" width="100%" cellpadding="0" cellspacing="0" name="6" id="6" border="0">
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2" border="0">
+<tr style="background-color: #eeeeff">
+<td width="37%" align="left" valign="top" style="border-style: none">
+<span style="white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="font-family:monospace">&#160;&#160;</span>&#160;&#160;<a href="javascript: void(0)" onclick="postParentWindowMessage({message:'jumpToCode',location:'State_Control_Init'})">
+State_Control_Init
+</a>
+</span>
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+20
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+20
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+5
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+10
+</td>
+<td width="12%" align="right" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="0" cellspacing="0" name="fcnInfo_table" id="fcnInfo_table" style="display: none" border="0">
+<tr>
+<td align="left" valign="top">
+보기: <a href="javascript:if (rtwSwitchView) rtwSwitchView(window.document,'fcnInfo_table', 'fcnInfo_calltree')" title="호출 트리 형식으로 호출 그래프를 찾아봅니다.">
+호출 트리
+</a>
+ | 테이블
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<table width="100%" cellpadding="2" class="treeTable" id="fcnTableView" border="1">
+<tr style="background-color: #eeeeff">
+<td width="22%" align="left" valign="top" style="border-style: none">
+<b>
+<span title="사전순으로 정렬된 함수 이름">함수 이름</span>
+</b>
+
+</td>
+<td width="22%" align="left" valign="top" style="border-style: none">
+<b>
+<span title="대응하는 첫 번째 열에 있는 함수를 호출하는 함수의 목록입니다. 호출 위치 개수는 괄호 안에 포함되어 있습니다.">호출자(호출 위치 개수)</span>
+</b>
+
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+<b>
+<span title="함수의 추정 스택 크기와 해당 서브루틴의 누적 스택 크기의 최댓값을 더한 값입니다.">누적 스택 크기(바이트)</span>
+</b>
+
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+<b>
+<span title="함수의 지역 변수, 입력 파라미터, 반환 변수의 크기입니다.">자체 스택 크기(바이트)</span>
+</b>
+
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+<b>
+<span title="주석과 빈 라인을 제외한 코드 라인 수입니다.">코드 라인 수</span>
+</b>
+
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+<b>
+<span style="white-space:nowrap" title="소스 코드, 주석, 빈 라인을 포함한 라인 수입니다.">라인 수</span>
+</b>
+
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+<b>
+<span style="white-space:nowrap" title="순환 복잡도">실수/복소수 여부</span>
+</b>
+
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td width="22%" align="left" valign="top" style="border-style: none">
+<a href="javascript: void(0)" onclick="postParentWindowMessage({message:'jumpToCode',location:'State_Control'})">
+State_Control
+</a>
+
+</td>
+<td width="22%" align="left" valign="top" style="border-style: none">
+<table width="100%" cellpadding="1" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top">
+<span style="white-space:nowrap" title="Vehicle_State0_step에 State_Control의 호출 위치가 하나 있습니다."><a href="javascript: void(0)" onclick="postParentWindowMessage({message:'jumpToCode',location:'Vehicle_State0_step'})">
+Vehicle_State0_step
+</a>
+</span>
+</td>
+
+</tr>
+
+</table>
+
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+48
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+48
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+129
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+153
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+22
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td width="22%" align="left" valign="top" style="border-style: none">
+<a href="javascript: void(0)" onclick="postParentWindowMessage({message:'jumpToCode',location:'State_Control_Init'})">
+State_Control_Init
+</a>
+
+</td>
+<td width="22%" align="left" valign="top" style="border-style: none">
+<table width="100%" cellpadding="1" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top">
+<span style="white-space:nowrap" title="Vehicle_State0_initialize에 State_Control_Init의 호출 위치가 하나 있습니다."><a href="javascript: void(0)" onclick="postParentWindowMessage({message:'jumpToCode',location:'Vehicle_State0_initialize'})">
+Vehicle_State0_initialize
+</a>
+</span>
+</td>
+
+</tr>
+
+</table>
+
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+20
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+20
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+5
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+10
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td width="22%" align="left" valign="top" style="border-style: none">
+<a href="javascript: void(0)" onclick="postParentWindowMessage({message:'jumpToCode',location:'Vehicle_State0_initialize'})">
+Vehicle_State0_initialize
+</a>
+
+</td>
+<td width="22%" align="left" valign="top" style="border-style: none">
+&#160;
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+20
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+0
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+2
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+12
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td width="22%" align="left" valign="top" style="border-style: none">
+<a href="javascript: void(0)" onclick="postParentWindowMessage({message:'jumpToCode',location:'Vehicle_State0_step'})">
+Vehicle_State0_step
+</a>
+
+</td>
+<td width="22%" align="left" valign="top" style="border-style: none">
+&#160;
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+48
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+0
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+6
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+26
+</td>
+<td width="11%" align="right" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>
